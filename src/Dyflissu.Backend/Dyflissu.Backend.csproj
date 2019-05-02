@@ -9,4 +9,9 @@
       <ProjectReference Include="..\Dyflissu.Shared\Dyflissu.Shared.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Lidgren.Network" Version="1.0.2" />
+      <PackageReference Include="MonoGame.Framework.Portable" Version="3.7.1.189" />
+    </ItemGroup>
+
 </Project>

@@ -1,8 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dyflissu.Shared", "Dyflissu.Shared\Dyflissu.Shared.csproj", "{FD6E4592-3B0A-4CEB-8DB6-FFBCA1A8D3A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dyflissu.Backend", "Dyflissu.Backend\Dyflissu.Backend.csproj", "{BB07430B-C542-4808-B353-F12AC09A2938}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dyflissu.DesktopGL", "Dyflissu.DesktopGL\Dyflissu.DesktopGL.csproj", "{467BE721-3CFE-4050-8280-E6E969451E2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD6E4592-3B0A-4CEB-8DB6-FFBCA1A8D3A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6E4592-3B0A-4CEB-8DB6-FFBCA1A8D3A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6E4592-3B0A-4CEB-8DB6-FFBCA1A8D3A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6E4592-3B0A-4CEB-8DB6-FFBCA1A8D3A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB07430B-C542-4808-B353-F12AC09A2938}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB07430B-C542-4808-B353-F12AC09A2938}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB07430B-C542-4808-B353-F12AC09A2938}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB07430B-C542-4808-B353-F12AC09A2938}.Release|Any CPU.Build.0 = Release|Any CPU
+		{467BE721-3CFE-4050-8280-E6E969451E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{467BE721-3CFE-4050-8280-E6E969451E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{467BE721-3CFE-4050-8280-E6E969451E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{467BE721-3CFE-4050-8280-E6E969451E2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -16,6 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Dyflissu.Physics\Dyflissu.Physics.csproj" />
       <ProjectReference Include="..\Dyflissu.Shared\Dyflissu.Shared.csproj" />
     </ItemGroup>
 

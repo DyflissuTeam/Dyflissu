@@ -1,3 +1,5 @@
+using System;
+
 namespace Dyflissu.Primitives
 {
     public struct Vector2
@@ -15,8 +17,24 @@ namespace Dyflissu.Primitives
             X = x;
             Y = y;
         }
+        
+        /// <summary>
+        /// Length of the vector.
+        /// </summary>
+        public float Length => MathF.Sqrt(SquareLength);
 
+        /// <summary>
+        /// Length of the vector in square.
+        /// </summary>
+        /// <remarks>
+        /// You not always need to take square root of the length, so this will be a bit better.
+        /// </remarks>
         public float SquareLength => X * X + Y * Y;
+
+        /// <summary>
+        /// Unit vector which is collinear to original.
+        /// </summary>
+        public Vector2 Normalized => this / Length;
         
         public static readonly Vector2 Zero = new Vector2(0);
 

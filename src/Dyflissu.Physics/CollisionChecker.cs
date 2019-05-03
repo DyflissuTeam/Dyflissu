@@ -94,15 +94,19 @@ namespace Dyflissu.Physics
             return manifold;
         }
 
-        private static bool IsAabbOverlapping(Body a, Body b)
+        public static bool IsAabbOverlapping(Body a, Body b)
         {
-            Vector2
-                aMax = a.Position + a.Shape.Box / 2,
-                aMin = a.Position - a.Shape.Box / 2,
-                bMax = b.Position + b.Shape.Box / 2,
-                bMin = b.Position - b.Shape.Box / 2;
+            if (MathF.Abs(a.Position.X - b.Position.X) * 2> a.Shape.Box.X + b.Shape.Box.X)
+            {
+                return false;
+            }
 
-            return !(aMax.X < bMin.X) && !(aMin.X > bMax.X) && (!(aMax.Y < bMin.Y) && !(aMin.X > bMax.Y));
+            if (MathF.Abs(a.Position.Y - b.Position.Y) * 2 > a.Shape.Box.Y + b.Shape.Box.Y)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

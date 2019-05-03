@@ -1,4 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using C3.XNA;
+using Dyflissu.Physics;
+using Dyflissu.Physics.Shapes;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -6,19 +9,34 @@ namespace Dyflissu.DesktopGL
 {
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
+        private World world;
+        private Body controlledBody;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            world = new World();
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            controlledBody = new Body
+            {
+                Shape = new RectangleShape(10f),
+                Mass = 100f,
+            };
+            
+            world.AddBody(controlledBody);
+            world.AddBody(new Body
+            {
+                Mass = 0,
+                Shape = new RectangleShape(20f),
+                Position = new Primitives.Vector2(0, 50f)
+            });
 
             base.Initialize();
         }
@@ -35,8 +53,21 @@ namespace Dyflissu.DesktopGL
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            
+            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+            {
+                controlledBody.Velocity = new Primitives.Vector2(0, 20f);
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.Down))
+            {
+                controlledBody.Velocity = new Primitives.Vector2(0, -20f);
+            }
+            else
+            {
+                controlledBody.Velocity = new Primitives.Vector2(0);
+            }
 
-            // TODO: Add your update logic here
+            world.Update(gameTime.ElapsedGameTime.Milliseconds / 1000f);
 
             base.Update(gameTime);
         }
@@ -45,7 +76,9 @@ namespace Dyflissu.DesktopGL
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            world.Draw(spriteBatch);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

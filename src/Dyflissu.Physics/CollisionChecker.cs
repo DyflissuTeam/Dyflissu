@@ -70,7 +70,6 @@ namespace Dyflissu.Physics
                 return manifold;
             }
 
-
             float yExtent = (a.Shape.Box.Y + b.Shape.Box.Y) / 2 - MathF.Abs(manifold.Normal.Y);
 
             if (yExtent <= 0)
@@ -78,18 +77,9 @@ namespace Dyflissu.Physics
                 return manifold;
             }
 
+            manifold.Normal = manifold.Normal.Normalized;
             manifold.Colliding = true;
-
-            if (xExtent > yExtent)
-            {
-                manifold.Normal = new Vector2(manifold.Normal.X < 0 ? -1 : 1, 0);
-                manifold.PenetrationDepth = xExtent;
-            }
-            else
-            {
-                manifold.Normal =  new Vector2(0, manifold.Normal.Y < 0 ? -1 : 1);
-                manifold.PenetrationDepth = yExtent;
-            }
+            manifold.PenetrationDepth = MathF.Max(xExtent, yExtent);
 
             return manifold;
         }

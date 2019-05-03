@@ -25,6 +25,11 @@ namespace Dyflissu.Physics
             {
                 for (var j = 0; j < _bodies.Count; ++j)
                 {
+                    if (i == j)
+                    {
+                        continue;
+                    }
+                    
                     CollisionChecker.Solve(_bodies[i], _bodies[j]);
                 }
             }

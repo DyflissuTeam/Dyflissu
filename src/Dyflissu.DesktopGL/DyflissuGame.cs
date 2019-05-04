@@ -1,14 +1,12 @@
-﻿using C3.XNA;
-using Dyflissu.Physics;
+﻿using Dyflissu.Physics;
 using Dyflissu.Physics.Shapes;
-using Dyflissu.Primitives;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 namespace Dyflissu.DesktopGL
 {
-    public class Game1 : Game
+    public class DyflissuGame : Game
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
@@ -16,7 +14,7 @@ namespace Dyflissu.DesktopGL
         private Body controlledBody;
         private MouseState _lastMouseState;
 
-        public Game1()
+        public DyflissuGame()
         {
             graphics = new GraphicsDeviceManager(this);
             world = new World(new Primitives.Vector2(0, 1f));

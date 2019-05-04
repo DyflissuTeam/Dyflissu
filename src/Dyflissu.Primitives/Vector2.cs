@@ -34,7 +34,7 @@ namespace Dyflissu.Primitives
         /// <summary>
         /// Unit vector which is collinear to original.
         /// </summary>
-        public Vector2 Normalized => this / Length;
+        public Vector2 Normalized => SquareLength > 0 ? this / Length : Zero;
         
         public static readonly Vector2 Zero = new Vector2(0);
 

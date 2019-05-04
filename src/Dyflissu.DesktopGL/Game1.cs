@@ -34,7 +34,7 @@ namespace Dyflissu.DesktopGL
             world.AddBody(new Body
             {
                 Mass = 0,
-                Shape = new RectangleShape(20f),
+                Shape = new RectangleShape(200f, 20f),
                 Position = new Primitives.Vector2(0, 50f)
             });
 
@@ -61,6 +61,14 @@ namespace Dyflissu.DesktopGL
             else if (Keyboard.GetState().IsKeyDown(Keys.Down))
             {
                 controlledBody.Velocity = new Primitives.Vector2(0, -20f);
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.Left))
+            {
+                controlledBody.Velocity = new Primitives.Vector2(-20f, 0);
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            {
+                controlledBody.Velocity = new Primitives.Vector2(20f, 0);
             }
             else
             {

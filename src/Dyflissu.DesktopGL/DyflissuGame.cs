@@ -17,7 +17,7 @@ namespace Dyflissu.DesktopGL
         public DyflissuGame()
         {
             graphics = new GraphicsDeviceManager(this);
-            world = new World(new Primitives.Vector2(0, 1f));
+            world = new World(new Vector2(0, 1f));
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -28,14 +28,14 @@ namespace Dyflissu.DesktopGL
             {
                 Shape = new RectangleShape(10f),
                 Mass = 1f,
-                Position = new Primitives.Vector2(250f, 250f - 20)
+                Position = new Vector2(250f, 250f - 20)
             };
             
             world.AddBody(controlledBody);
             world.AddBody(new Body
             {
                 Mass = 0,
-                Position = new Primitives.Vector2(250f, 250f + 20),
+                Position = new Vector2(250f, 250f + 20),
                 Shape = new RectangleShape(100f, 30f),
             });
 
@@ -63,30 +63,30 @@ namespace Dyflissu.DesktopGL
                 world.AddBody(new Body
                 {
                     Shape = new RectangleShape(10f),
-                    Position = new Primitives.Vector2(currentMouseState.X, currentMouseState.Y)
+                    Position = new Vector2(currentMouseState.X, currentMouseState.Y)
                 });
             }
 
-            Primitives.Vector2 velocity;
+            Vector2 velocity;
             if (Keyboard.GetState().IsKeyDown(Keys.Up))
             {
-                velocity = new Primitives.Vector2(0, 1);
+                velocity = new Vector2(0, 1);
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.Down))
             {
-                velocity = new Primitives.Vector2(0, -1);
+                velocity = new Vector2(0, -1);
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
-                velocity = new Primitives.Vector2(-1, 0);
+                velocity = new Vector2(-1, 0);
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
-                velocity = new Primitives.Vector2(1, 0);
+                velocity = new Vector2(1, 0);
             }
             else
             {
-                velocity = new Primitives.Vector2(0);
+                velocity = new Vector2(0);
             }
 
             controlledBody.Velocity = velocity;

@@ -1,5 +1,5 @@
 using System;
-using Dyflissu.Primitives;
+using Microsoft.Xna.Framework;
 
 namespace Dyflissu.Physics
 {
@@ -27,7 +27,7 @@ namespace Dyflissu.Physics
             A = a;
             B = b;
 
-            E = Math.Abs((b.Velocity - a.Velocity).SquareLength) < 1e-10 
+            E = Math.Abs((b.Velocity - a.Velocity).LengthSquared()) < 1e-10 
                 ? 0 
                 : MathF.Min(a.Restitution, b.Restitution);
         }
@@ -35,15 +35,15 @@ namespace Dyflissu.Physics
         public bool Solve()
         {
             Vector2 normal = A.Position - B.Position;
-            float aHalfSizeX = A.Shape.Box.X / 2;
-            float bHalfSizeX = B.Shape.Box.X / 2;
+            float aHalfSizeX = A.Shape.Box.X / 2f;
+            float bHalfSizeX = B.Shape.Box.X / 2f;
 
             float xOverlap = aHalfSizeX + bHalfSizeX - MathF.Abs(normal.X);
 
             if (xOverlap <= 0) return false;
             
-            float aHalfSizeY = A.Shape.Box.Y / 2;
-            float bHalfSizeY = B.Shape.Box.Y / 2;
+            float aHalfSizeY = A.Shape.Box.Y / 2f;
+            float bHalfSizeY = B.Shape.Box.Y / 2f;
 
             float yOverlap = aHalfSizeY + bHalfSizeY - MathF.Abs(normal.Y);
 
@@ -70,7 +70,7 @@ namespace Dyflissu.Physics
 
         public void Resolve()
         {
-            E = Math.Abs((B.Velocity - A.Velocity).SquareLength) < 1e-10 
+            E = Math.Abs((B.Velocity - A.Velocity).LengthSquared()) < 1e-10 
                 ? 0 
                 : MathF.Min(A.Restitution, B.Restitution);
             

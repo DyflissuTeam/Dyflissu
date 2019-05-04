@@ -3,7 +3,6 @@ using Dyflissu.Physics;
 using Dyflissu.Physics.Shapes;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using DyflissuVector2 = Dyflissu.Primitives.Vector2;
 
 namespace Dyflissu.DesktopGL
 {
@@ -16,13 +15,11 @@ namespace Dyflissu.DesktopGL
                 switch (body.Shape)
                 {
                     case RectangleShape rectangleShape:
-                        Vector2 position = (body.Position - body.Shape.Box / 2).ToXna();
-                        spriteBatch.DrawRectangle(position, rectangleShape.Box.ToXna(), Color.Green);
+                        Vector2 position = (body.Position - body.Shape.Box / 2);
+                        spriteBatch.DrawRectangle(position, rectangleShape.Box, Color.Green);
                         break;
                 }
             }
         }
-
-        public static Vector2 ToXna(this DyflissuVector2 v) => new Vector2(v.X, v.Y);
     }
 }

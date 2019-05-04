@@ -1,6 +1,5 @@
 using System;
-using Dyflissu.Physics.Shapes;
-using Dyflissu.Primitives;
+using Microsoft.Xna.Framework;
 
 namespace Dyflissu.Physics
 {

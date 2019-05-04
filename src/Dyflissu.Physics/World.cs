@@ -1,7 +1,6 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using Dyflissu.Primitives;
+using Microsoft.Xna.Framework;
 
 namespace Dyflissu.Physics
 {

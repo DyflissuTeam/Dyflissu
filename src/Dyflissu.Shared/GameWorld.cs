@@ -1,5 +1,5 @@
 using Dyflissu.Physics;
-using Dyflissu.Primitives;
+using Microsoft.Xna.Framework;
 
 namespace Dyflissu.Shared
 {

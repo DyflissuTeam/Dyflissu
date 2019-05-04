@@ -5,7 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Dyflissu.Primitives\Dyflissu.Primitives.csproj" />
+      <PackageReference Include="MonoGame.Framework.Portable" Version="3.7.1.189" />
     </ItemGroup>
 
 </Project>

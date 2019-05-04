@@ -1,5 +1,6 @@
 using Dyflissu.Physics.Shapes;
-using Dyflissu.Primitives;
+using Microsoft.Xna.Framework;
+
 // Argh. I'm checking exactly with zero, don't bother me, man.
 // ReSharper disable CompareOfFloatsByEqualityOperator
 

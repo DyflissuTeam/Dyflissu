@@ -1,4 +1,4 @@
-using Dyflissu.Primitives;
+using Microsoft.Xna.Framework;
 
 namespace Dyflissu.Physics.Shapes
 {

@@ -1,3 +1,4 @@
 {
-  "port": 25805
+  "port": 25805,
+  "minimalUpdateDelta": 0.033
 }

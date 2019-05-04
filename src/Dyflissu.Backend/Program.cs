@@ -8,7 +8,12 @@ namespace Dyflissu.Backend
         public static void Main(string[] args)
         {
             ConfigurationsManager.LoadConfiguration();
-            Console.WriteLine("Hello World!");
+            var gameServer = new GameServer(
+                ConfigurationsManager.ServerConfiguration,
+                ConfigurationsManager.SharedConfiguration
+            );
+
+            gameServer.Run();
         }
     }
 }

@@ -11,5 +11,10 @@ namespace Dyflissu.Shared
         {
             PhysicsWorld = new World(Vector2.Zero);
         }
+
+        public void Update(float delta)
+        {
+            PhysicsWorld.Update(delta);
+        }
     }
 }

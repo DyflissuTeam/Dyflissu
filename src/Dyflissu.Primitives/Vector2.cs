@@ -38,6 +38,8 @@ namespace Dyflissu.Primitives
         
         public static readonly Vector2 Zero = new Vector2(0);
 
+        public static Vector2 operator -(Vector2 v) => new Vector2(-v.X, -v.Y);
+
         public static Vector2 operator -(Vector2 a, Vector2 b) => new Vector2(a.X - b.X, a.Y - b.Y);
 
         public static Vector2 operator +(Vector2 a, Vector2 b) => new Vector2(a.X + b.X, a.Y + b.Y);

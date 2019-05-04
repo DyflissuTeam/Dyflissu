@@ -10,4 +10,10 @@
       <ProjectReference Include="..\Dyflissu.Shared\Dyflissu.Shared.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="Dyflissu.Server.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

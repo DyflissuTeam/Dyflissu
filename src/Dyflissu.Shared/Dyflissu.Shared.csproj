@@ -8,4 +8,15 @@
       <ProjectReference Include="..\Dyflissu.Physics\Dyflissu.Physics.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="Dyflissu.json" />
+      <Content Include="Dyflissu.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    </ItemGroup>
+
 </Project>

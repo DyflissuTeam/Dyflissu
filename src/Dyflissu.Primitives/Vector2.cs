@@ -35,6 +35,8 @@ namespace Dyflissu.Primitives
         /// Unit vector which is collinear to original.
         /// </summary>
         public Vector2 Normalized => SquareLength > 0 ? this / Length : Zero;
+
+        public Vector2 Absolute => new Vector2(MathF.Abs(X), MathF.Abs(Y));
         
         public static readonly Vector2 Zero = new Vector2(0);
 

@@ -16,7 +16,7 @@ namespace Dyflissu.DesktopGL
                 switch (body.Shape)
                 {
                     case RectangleShape rectangleShape:
-                        Vector2 position = (body.Position - body.Shape.Box / 2).ToXna() + new Vector2(250f);
+                        Vector2 position = (body.Position - body.Shape.Box / 2).ToXna();
                         spriteBatch.DrawRectangle(position, rectangleShape.Box.ToXna(), Color.Green);
                         break;
                 }

@@ -14,11 +14,12 @@ namespace Dyflissu.DesktopGL
         private SpriteBatch spriteBatch;
         private World world;
         private Body controlledBody;
+        private MouseState _lastMouseState;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            world = new World(new Primitives.Vector2(0, 10f));
+            world = new World(new Primitives.Vector2(0, 1f));
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -29,14 +30,14 @@ namespace Dyflissu.DesktopGL
             {
                 Shape = new RectangleShape(10f),
                 Mass = 1f,
-                Position = new Primitives.Vector2(0, -20)
+                Position = new Primitives.Vector2(250f, 250f - 20)
             };
             
             world.AddBody(controlledBody);
             world.AddBody(new Body
             {
                 Mass = 0,
-                Position = new Primitives.Vector2(0, 20),
+                Position = new Primitives.Vector2(250f, 250f + 20),
                 Shape = new RectangleShape(100f, 30f),
             });
 
@@ -55,6 +56,18 @@ namespace Dyflissu.DesktopGL
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+
+            MouseState currentMouseState = Mouse.GetState();
+
+            if (_lastMouseState.LeftButton == ButtonState.Pressed &&
+                currentMouseState.LeftButton == ButtonState.Released)
+            {
+                world.AddBody(new Body
+                {
+                    Shape = new RectangleShape(10f),
+                    Position = new Primitives.Vector2(currentMouseState.X, currentMouseState.Y)
+                });
+            }
 
             Primitives.Vector2 velocity;
             if (Keyboard.GetState().IsKeyDown(Keys.Up))
@@ -80,6 +93,8 @@ namespace Dyflissu.DesktopGL
 
             controlledBody.Velocity = velocity;
             world.Update(gameTime.ElapsedGameTime.Milliseconds / 1000f);
+
+            _lastMouseState = currentMouseState;
 
             base.Update(gameTime);
         }

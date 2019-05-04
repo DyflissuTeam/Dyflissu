@@ -14,7 +14,7 @@ namespace Dyflissu.Physics
         
         public Vector2 Force { get; private set; }
 
-        public float Mass { get; set; } = 1f;
+        public float Mass { get; set; } = 0.1f;
         public float Restitution { get; set; } = 0;
         
         public float InverseMass => Mass == 0 ? 0 : 1f / Mass;

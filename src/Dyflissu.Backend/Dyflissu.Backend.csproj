@@ -6,11 +6,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\submodules\lidgren-network-gen3\Lidgren.Network.MultiTarget\Lidgren.Network.MultiTarget.csproj" />
       <ProjectReference Include="..\Dyflissu.Shared\Dyflissu.Shared.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="Lidgren.Network" Version="1.0.2" />
     </ItemGroup>
 
 </Project>

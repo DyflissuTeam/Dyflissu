@@ -1,0 +1,3 @@
+[submodule "submodules/lidgren-network-gen3"]
+	path = submodules/lidgren-network-gen3
+	url = git@github.com:lidgren/lidgren-network-gen3.git

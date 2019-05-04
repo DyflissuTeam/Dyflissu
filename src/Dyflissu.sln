@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dyflissu.Physics", "Dyfliss
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dyflissu.Primitives", "Dyflissu.Primitives\Dyflissu.Primitives.csproj", "{A62F8FC9-133F-4710-BFCC-899F49EE422B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lidgren.Network.MultiTarget", "..\submodules\lidgren-network-gen3\Lidgren.Network.MultiTarget\Lidgren.Network.MultiTarget.csproj", "{3F46F990-29F4-4DFC-AB52-AF9586773907}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{A62F8FC9-133F-4710-BFCC-899F49EE422B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A62F8FC9-133F-4710-BFCC-899F49EE422B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A62F8FC9-133F-4710-BFCC-899F49EE422B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F46F990-29F4-4DFC-AB52-AF9586773907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F46F990-29F4-4DFC-AB52-AF9586773907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F46F990-29F4-4DFC-AB52-AF9586773907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F46F990-29F4-4DFC-AB52-AF9586773907}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
